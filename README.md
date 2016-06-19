@@ -107,10 +107,12 @@
 * 你怎麼做一個需要支持多國語言的網頁？
     1. i18n library
     2. l10n library
-    3. DB Table對應
+    3. resx 檔案，作為多國語系的 library (.NET 開發環境)
+    3. DB Table　搭配 Cache 機制對應
 
 * 當開發和設計一個多國語言網站時，有什麼需要小心的？
-> 翻譯內容不正確...
+> 翻譯內容不正確
+> 頁面是否有 SEO 考量，若有需要考量 SEO 部分
 
 * `data-` 屬性的好處在哪？
 * 考慮 HTML5 作為一個開放式的網站平台，組成 HTML5 的技術有哪些？
@@ -118,10 +120,11 @@
     1. Cookie 可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效。
     2. localStorage 除非被清除，否则永久保存。
     3. sessionStorage 當前對話有效，關閉頁面或瀏覽器時清除。
+
 > 請參考 [详说 Cookie, LocalStorage 与 SessionStorage](http://jerryzou.com/posts/cookie-and-web-storage/)
 
 * 描述下列之間的不同 `<script>`, `<script async>` & `<script defer>`。
-> script 會等 script 下載完，網頁才會繼續 render。
+> script 會等 script 下載完，網頁才會繼續 render。<BR>
 > script async 會讓 script 在背景下載，下載完畢先執行 script 再繼續 render 網頁。
 > script defer 會讓 script 在背景下載，等 DomContentLoaded 在執行 script。
 
