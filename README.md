@@ -302,12 +302,30 @@
   > 當覺得程式慢的時候，當 unit-test 執行時間過久的時候，當 render 行為不正常的時候
   
 * 你什麼情況會使用 `document.write()`？
+
+  > Inject some script with sync like ad, but it will cause render block for bad user experience. 
+  
 * 多數的廣告產生仍然使用 `document.write()` 雖然這樣用會令人皺眉
+
 * feature detection, feature inference, 和使用 UA string 有什麼不同？
+
+  > Feature detection is just a way of determining if a feature exists in certain browsers. 
+  > Feature Inference is when you have determined a feature exists and assumed the next web technology feature you are implementing unto your app exists as well. Its usually bad practice to assume, so its better to explicitly specify features you want to detect and plan a fallback action.
+  > UA String or User Agent String is a string text of data that each browsers send and can be access via navigator.userAgent. These “string text of data” contains information of the browser environment you are targeting.
+
 * 盡可能的詳述描述 AJAX。
+
+  > Async way to make a http request with XML or JSON data with server or file.
+  
 * 描述 JSONP 如何運作 (且為何它不是真正的 AJAX)。
 * 你是用過 JavaScript templating (樣板) ？
+
+  > 有
+  
   * 如果有的話，你有用過哪些 libraries？ (Mustache.js, Handlebars … 等)
+  
+  > Trimpath, AngularJs, Vue
+  
 * 描述 "hoisting"
 
   > Js variable will pull onto top level.
@@ -317,11 +335,17 @@
   > Event will be inheritence. if you do not want to trigger other event, you need to stop event bubbling.
   
 * "attribute" 和 "property" 的不同？
+
+  > HTML tag we call it attribute, and JavaScript object data we call it property.
+  
 * 為什麼擴展 JavaScript 內建的 objects 不是個好方法？
 
   > 會有繼承鏈的問題，導致未來擴展不順利
 
 * document load event 和 document ready event 有什麼不同？
+
+  > document load event will need all resource load completed will display website, docuement ready will only wait for HTML DOM ready then you will see website.
+
 * `==` 和 `===` 有什麼不同？
 
   > `==` 只會比較兩邊的 value(強迫轉型比較)
@@ -335,7 +359,14 @@
   ```
 
 * Ternary expression 怎麼來的, "Ternary" 的意思是什麼？
+  
+  > Turn `if else` expression to `? :`.
+  
 * 什麼是 `"use strict";`? 使用他的優點和缺點是什麼？
+
+  > Benefit: Help you write more statable JavaScript code.
+  > Disadvantage: Browser support.
+  
 * 建個數到 `100` 的迴圈，當數字是 `3` 的倍數時輸出 **"fizz"**，當數字是 `5` 的倍數時輸出 `"buzz"`，當數字同時是 `3` 與 `5` 的倍數時輸出 **"fizzbuzz"**。
 * 為什麼保持網站的全域(global scope)原樣是一個好做法？
 * 為什麼要用 `load` 事件？有什麼缺點嗎？有其他選擇嗎？又為何選擇它？
@@ -343,13 +374,29 @@
 * 你對 Promises 的經驗？有用過相關的補強（ployfills）嗎？
 * Promises 之於 callbacks 的優劣？
 * JavaScript 轉譯器（transpiler）的優缺點？
+
+  > Like Babel, you can write different kind of language like TypeScript, ES6+, Coffee Script ... etc. You can get these language benefits.
+  > You must need to pre-compile your source code to js code or your browser might not know what you write, and the translated file are not readable like source code, so some bundler will provide SoureMap feature for debugging.
+  
 * 你用什麼工具或技巧來做 JavaScript debug?
+
+  > Chrome devTool with sourceMap step by step or React devTool, Vue devTool. Or `console.log`.
+
 * 你都用什麼對 object properties 與 array 進行迭代？
+
+  > You can use `Object.keys` to get all obeject properties and use foreach/map/for API these keys to get object property's value by `Object[key]`.
+  > In ES5 Use `for` or lodash library with `_.map`. In ES6+, you can use `Array.map(element => element)`.
+  
 * 解釋 mutable 與 immutable objects 之間的不同。
   * 舉個 immutable 在 JavaScript 中例子？
   * immutability 的憂劣？
   * 如何達成 immutability？
 * 解釋同步（synchronous）與非同步（asynchronous）函式之間的差異。
+  
+  > JavaScript is a sync excusive language, but you can use async to improve performance.
+  Async function will not excute sequence, it need to use callback to do something when async function completed.
+  So you can use `Promise` or `Async Await` for improve callback syntax.
+  
 * Event loop 是什麼？
   * call stack 與 task queue 之間的不同？
 
@@ -360,10 +407,18 @@
 * Unit test 與 functional/integration 間的不同？
 * 監控代碼風格 linting 工具的用途是？
 
+  > Like ESLint, can rule the source code should follow some rule to write.
+
 #### <a name='performance-questions'>效能問題集:</a>
 
 * 你都用什麼工具尋找效能上的臭蟲？
+
+  > devTool, React why-did-you-update library, React perf.
+  
 * 有哪些方法可改善網站在 scrolling 效能？
+  
+  > Resouce lazy load, render lazy.
+  
 * 解釋 layout, painting 與 compositing 的不同。（瀏覽器在 render 上的效能問題）
 
 #### <a name='network-questions'>網路問題集:</a>
